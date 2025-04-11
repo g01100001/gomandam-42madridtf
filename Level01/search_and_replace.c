@@ -6,7 +6,7 @@
 /*   By: gomandam <gomandam@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:03:02 by gomandam          #+#    #+#             */
-/*   Updated: 2025/04/10 19:11:11 by gomandam         ###   ########.fr       */
+/*   Updated: 2025/04/11 13:22:04 by gomandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,9 @@ Concepts:
 Assuming:
 	int value = 0;
 	printf("value = %d", !value);
-
 	value = 1
 
-Alternatively Solutions:
+Alternative Solutions:
 	1. You can use strlen in the exam. or
 	2. Check if argv[i][1] == '\0', therefore, ensures that only one character
        		since index 0 = chracter1 and 1 = NULL or '\0'
