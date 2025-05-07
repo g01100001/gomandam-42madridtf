@@ -1,38 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gomandam <gomandam@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 22:18:44 by gomandam          #+#    #+#             */
-/*   Updated: 2025/05/07 22:18:59 by gomandam         ###   ########.fr       */
+/*   Created: 2025/05/07 23:01:44 by gomandam          #+#    #+#             */
+/*   Updated: 2025/05/07 23:20:43 by gomandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-Assignment name  : ft_strcmp
-Expected files   : ft_strcmp.c
-Allowed functions:
+/*Assignment name  : ft_strdup
+Expected files   : ft_strdup.c
+Allowed functions: malloc
 --------------------------------------------------------------------------------
 
-Reproduce the behavior of the function strcmp (man strcmp).
+Reproduce the behavior of the function strdup (man strdup).
 
 Your function must be declared as follows:
 
-int    ft_strcmp(char *s1, char *s2);
+char    *ft_strdup(char *src);
 */
 
+#include <string.h>
 #include <unistd.h>
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strdup(char *src)
 {
-	int	i;
+	int	i = 0;
+	int	length;
+	char	*copy;	
 
-	i = 0;
-	if (!s1 || !s2)
-		return (-1);
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+	if (src == NULL)	//pointer context: similar to !src
+		return (NULL);
+	length = strlen(src) + 1;
+	copy = malloc(sizeof(char) * length);
+	if (!copy)
+		return (NULL);
+	while (src[i] != '\0')
+	{
+		copy[i] = src[i];
 		i++;
-	return (s1[i] - s2[i]);
+	}
+	copy[i] = '\0';
+	return (copy);
 }
