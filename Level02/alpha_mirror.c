@@ -6,7 +6,7 @@
 /*   By: gomandam <gomandam@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 13:15:08 by gomandam          #+#    #+#             */
-/*   Updated: 2025/05/08 13:16:34 by gomandam         ###   ########.fr       */
+/*   Updated: 2025/05/08 13:23:26 by gomandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,5 @@ int	main(int ac, char *av[])
 		write(1, &av[1][i++], 1);
 	}
 	write(1, "\n", 1);
+	return (0);
 }
