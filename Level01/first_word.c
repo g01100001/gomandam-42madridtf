@@ -6,7 +6,7 @@
 /*   By: gomandam <gomandam@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 21:32:35 by gomandam          #+#    #+#             */
-/*   Updated: 2025/04/09 03:54:58 by gomandam         ###   ########.fr       */
+/*   Updated: 2025/05/08 15:09:02 by gomandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(int argc, char *argv[])
 	i = 0;
 	if (argc == 2)
 	{
-	while (argv[1][i] == ' ' || argv[1][i] == '\t')
+	while (argv[1][i] == ' ' || argv[1][i] == '\t')		//space or tab
 		i++;
 	while (!(argv[1][i] == ' ' || argv[1][i] == '\t') && argv[1][i])
 		{
