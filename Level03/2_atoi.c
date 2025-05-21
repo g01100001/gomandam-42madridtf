@@ -6,11 +6,12 @@
 /*   By: gomandam <gomandam@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 20:21:17 by gomandam          #+#    #+#             */
-/*   Updated: 2025/05/14 20:29:18 by gomandam         ###   ########.fr       */
+/*   Updated: 2025/05/19 20:51:03 by gomandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Short version of ATOI
+// No negative, No whitespaces, No underflow/overflow, No validation
 
 #include <unistd.h>
 
