@@ -5,21 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gomandam <gomandam@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 13:15:08 by gomandam          #+#    #+#             */
-/*   Updated: 2025/05/08 13:23:26 by gomandam         ###   ########.fr       */
+/*   Created: 2025/05/09 02:42:43 by gomandam          #+#    #+#             */
+/*   Updated: 2025/05/09 02:46:07 by gomandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Write a program called alpha_mirror that takes a string as input and shows this string
-after replacing each alphabetical character with its opposite alphabetical character,
-followed by a newline.
+/*
+Assignment name  : alpha_mirror
+Expected files   : alpha_mirror.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program called alpha_mirror that takes a string and displays this string
+after replacing each alphabetical character by the opposite alphabetical
+character, followed by a newline.
 
 'a' becomes 'z', 'Z' becomes 'A'
 'd' becomes 'w', 'M' becomes 'N'
 
-etc.
+and so on.
 
-The case does not change.
+Case is not changed.
 
 If the number of arguments is not 1, display only a newline.
 
@@ -31,28 +37,27 @@ $>./alpha_mirror "My horse is Amazing." | cat -e
 Nb slihv rh Znzarmt.$
 $>./alpha_mirror | cat -e
 $
-$>*/
+$>
+*/
 
 #include <unistd.h>
 
-int	main(int ac, char *av[])
+int	main(int ac, char **av)
 {
-	int	i;
-	
-	i = 0;
-	if (ac != 2)
+	int i = 0;
+
+	if (ac == 2)
 	{
-		write(1, "\n", 1);
-		return (0);
-	}
-	while (av[1][i])
-	{
-		if (av[1][i] >= 'a' && av[1][i] <= 'z')
-			av[1][i] = 'z' - (av[1][i] - 'a');
-		else if (av[1][i] >= 'A' && av[1][i] <= 'Z')
-			av[1][i] = 'Z' - (av[1][i] - 'A');
-		write(1, &av[1][i++], 1);
+		while (av[1][i])
+		{
+			char c = av[1][i];
+			if (c >= 'a' && c <= 'z')
+				c = ('a' + 'z') - c;
+			else if (c >= 'A' && c <= 'Z')
+				c = ('A' + 'Z') - c;
+			write(1, &c, 1);
+			i++;
+		}
 	}
 	write(1, "\n", 1);
-	return (0);
 }

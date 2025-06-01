@@ -6,7 +6,7 @@
 /*   By: gomandam <gomandam@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 11:49:14 by gomandam          #+#    #+#             */
-/*   Updated: 2025/04/03 12:43:37 by gomandam         ###   ########.fr       */
+/*   Updated: 2025/06/01 00:06:30 by gomandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_swap(int *a, int *b);
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdlib.h>
 
 void	ft_swap(int *a, int *b)
 {
@@ -42,8 +43,10 @@ int	main(int argc, char *argv[])
 	int	xvalue;
 	int	yvalue;
 
+	printf("Initial valuesn %d\n", argc);
+	usleep(10000000);
 	if (argc != 3)
-		printf("\nUtilization: 	./ft_swap.out [x] [y]\n\n", stderr);
+		return (printf("\nUtilization: 	./ft_swap.out [x] [y]\n\n"), 1);
 	xvalue = atoi(argv[1]);
 	yvalue = atoi(argv[2]);
 	printf("Initial values of x and y are your input.\n");
